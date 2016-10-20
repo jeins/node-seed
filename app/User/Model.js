@@ -50,10 +50,7 @@ class User extends AbstractModel{
      * @param callback
      */
     getById(id, callback){
-        let condition = {};
-        condition[UserField.id.f] = id;
-
-        this.user.findOne({where: condition})
+        this.user.findById(id)
             .then((user)=>{
                 callback(null, user);
             })

@@ -36,10 +36,7 @@ class Product extends AbstractModel{
     }
 
     getById(id, callback){
-        let condition = {};
-        condition[ProductField.id.f] = id;
-
-        this.product.findOne({where: condition})
+        this.product.findById(id)
             .then((product)=>{
                 callback(null, product);
             })
