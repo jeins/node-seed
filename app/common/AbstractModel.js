@@ -30,7 +30,7 @@ class AbstractModel {
     getDataType(reqType){
         let dataType = "";
 
-        switch (reqType){
+        switch (reqType.toLowerCase()){
             case 'string': dataType = Sequelize.STRING; break;
             case 'integer': dataType = Sequelize.INTEGER; break;
             case 'text': dataType = Sequelize.TEXT; break;
