@@ -1,7 +1,6 @@
 'use strict';
 
 import User from './Model';
-import UserField from './Field';
 
 class UserController {
     constructor(){
@@ -22,12 +21,7 @@ class UserController {
     }
 
     addNewUser(req, res){
-        var user = {};
-        user[UserField.fullName.f] = req.body[UserField.fullName.f];
-        user[UserField.email.f] = req.body[UserField.email.f];
-        user[UserField.password.f] = req.body[UserField.password.f];
-
-        this.user.add(user, (errMessage, result)=>{
+        this.user.add(req.body, (errMessage, result)=>{
             if(!errMessage && result){
                 res.json(result);
             } else {

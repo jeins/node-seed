@@ -70,8 +70,13 @@ class User extends AbstractModel{
      * @param callback
      */
     add(data, callback){
-        data.password = this._getHash(data.password);
-        this.user.create(data)
+        var user = {};
+
+        user[UserField.fullName.f] = data[UserField.fullName.f];
+        user[UserField.email.f] = data[UserField.email.f];
+        user[UserField.password.f] = this._getHash(data[UserField.password.f]);
+
+        this.user.create(user)
             .then((user)=>{
                 callback(null, user.get());
             })
