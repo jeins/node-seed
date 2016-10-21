@@ -4,8 +4,9 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan';
 
 import Middleware from './Middleware';
-import UserRoute from './User/UserRoute';
-import ProductRoute from './Product/ProductRoute';
+import UserRoute from './User/Route';
+import ProductRoute from './Product/Route';
+import PurchaseRoute from './Purchase/Route';
 
 var app = express();
 app.server = http.createServer(app);
@@ -20,6 +21,7 @@ app.use(Middleware.enableCors);
 app.use(morgan('dev'));
 app.use('/', UserRoute());
 app.use('/', ProductRoute());
+app.use('/', PurchaseRoute());
 app.use('/', (req, res)=>{
      res.json("OK");
 });

@@ -32,6 +32,10 @@ class User extends AbstractModel{
         return model;
     }
 
+    getUser(){
+        return this.user;
+    }
+
     /**
      * retrieve all users
      *
@@ -67,7 +71,7 @@ class User extends AbstractModel{
      * @param callback
      */
     add(data, callback){
-        var user = {};
+        let user = {};
 
         user[UserField.fullName.f] = data[UserField.fullName.f];
         user[UserField.email.f] = data[UserField.email.f];

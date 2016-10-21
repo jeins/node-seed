@@ -39,7 +39,7 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             totalPrice: {
-                type: Sequelize.INTEGER
+                type: Sequelize.DOUBLE
             },
             updatedAt: {
                 type: Sequelize.DATE

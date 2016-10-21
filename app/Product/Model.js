@@ -29,6 +29,10 @@ class Product extends AbstractModel{
         return model;
     }
 
+    getProduct(){
+        return this.product;
+    }
+
     getAll(callback){
         this.product.findAll().then((product)=>{
             callback(product);
