@@ -1,7 +1,5 @@
-'use strict';
-
 import Sequelize from 'sequelize';
-import dbConf from '../config/database';
+import dbConf from '../../config/database';
 
 class AbstractModel {
 

@@ -3,7 +3,7 @@
 var faker = require('faker'),
     crypto = require('crypto'),
     moment = require('moment'),
-    config = require('../../app/config/config.js');
+    config = require('../../config/config.js');
 
 module.exports = {
   up: function (queryInterface, Sequelize) {

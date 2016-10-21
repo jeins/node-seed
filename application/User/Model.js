@@ -1,9 +1,6 @@
-'use strict';
-
-//noinspection JSUnresolvedVariable
-import AbstractModel from '../common/AbstractModel';
+import AbstractModel from '../Default/AbstractModel';
 import UserField from './Field';
-import config from '../config/config';
+import config from '../../config/config';
 import crypto from 'crypto';
 
 class User extends AbstractModel{

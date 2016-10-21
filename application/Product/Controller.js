@@ -1,5 +1,3 @@
-'use strict';
-
 import Product from './Model';
 
 class ProductController {

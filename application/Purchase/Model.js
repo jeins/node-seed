@@ -1,6 +1,4 @@
-'use strict';
-
-import AbstractModel from '../common/AbstractModel';
+import AbstractModel from '../Default/AbstractModel';
 import PurchaseField from './Field';
 import UserField from '../User/Field';
 import User from '../User/Model';

@@ -1,7 +1,4 @@
-'use strict';
-
-//noinspection JSUnresolvedVariable
-import AbstractModel from '../common/AbstractModel';
+import AbstractModel from '../Default/AbstractModel';
 import ProductField from './Field';
 
 class Product extends AbstractModel{
