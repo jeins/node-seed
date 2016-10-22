@@ -47,8 +47,15 @@ class AuthController{
 
     validateUser(email, password, callback){
         this.user.getByEmailAndPassword(email, password, (errMessage, user)=>{
-            if(user) callback(null, user);
+            if(!errMessage && user) callback(null, user);
             else callback(errMessage, null);
+        });
+    }
+
+    validateUserByIdAndEmail(data, callback){
+        this.user.getByIdAndEmail(data, (errMessage, user)=>{
+            if(!errMessage && user) callback(true);
+            else callback(false);
         });
     }
 

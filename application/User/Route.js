@@ -10,11 +10,11 @@ export default ()=>{
     router.post('/login', (req, res)=> authCtrl.login(req, res));
     router.post('/register', (req, res)=> authCtrl.register(req, res));
 
-    router.get('/users', (req, res)=> ctrl.getAllUser(req, res));
-    router.get('/user/:id', (req, res)=> ctrl.getUserById(req, res));
-    //router.post('/user', (req, res)=> ctrl.addNewUser(req, res));
-    router.put('/user/:id', (req, res)=> ctrl.updateUser(req, res));
-    router.delete('/user/:id', (req, res)=> ctrl.deleteUser(req, res));
+    router.get('/api/users', (req, res)=> ctrl.getAllUser(req, res));
+    router.get('/api/user/:id', (req, res)=> ctrl.getUserById(req, res));
+    //router.post('/api/user', (req, res)=> ctrl.addNewUser(req, res));
+    router.put('/api/user/:id', (req, res)=> ctrl.updateUser(req, res));
+    router.delete('/api/user/:id', (req, res)=> ctrl.deleteUser(req, res));
 
     return router;
 }

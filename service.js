@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan';
 
 import corsMiddleware from './middleware/cors';
+import validateRequestMiddleware from './middleware/validateRequestAuth';
 import UserRoute from './application/User/Route';
 import ProductRoute from './application/Product/Route';
 import PurchaseRoute from './application/Purchase/Route';
@@ -19,6 +20,8 @@ app.use(corsMiddleware);
 
 // use morgan to log requests to the console
 app.use(morgan('dev'));
+
+app.all('/api/*', validateRequestMiddleware);
 
 app.use('/', UserRoute());
 app.use('/', ProductRoute());
