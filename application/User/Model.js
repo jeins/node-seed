@@ -62,6 +62,27 @@ class User extends AbstractModel{
     }
 
     /**
+     * get user from existed email and password
+     *
+     * @param email
+     * @param password
+     * @param callback
+     */
+    getByEmailAndPassword(email, password, callback){
+        let condition = {};
+
+        condition[UserField.email.f] = email;
+        condition[UserField.password.f] = this._getHash(password);
+
+        this.user.find({attributes: [UserField.id.f, UserField.email.f], where: condition})
+            .then((user)=>{
+                callback(null, user);
+            })
+            .catch((err)=>{callback(err.message, null)})
+        ;
+    }
+
+    /**
      * add new user
      *
      * @param data

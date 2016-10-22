@@ -26,6 +26,14 @@ module.exports = {
               .digest('hex');
       };
 
+    arrData.push({
+        fullName: "Admin Demo",
+        email: "admin@demo.com",
+        password: _getHash("admin"),
+        createdAt: moment().format('YYYY-MM-DD HH:mm:ss'),
+        updatedAt:  moment().format('YYYY-MM-DD HH:mm:ss')
+    });
+
     for(var i=0; i<100; i++){
         arrData.push({
             fullName: faker.name.findName(),

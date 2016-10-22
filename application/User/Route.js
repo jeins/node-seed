@@ -1,9 +1,13 @@
 import {Router} from 'express';
 import UserController from './Controller';
+import AuthController from './AuthController';
 
 export default ()=>{
     let router = Router();
     let ctrl = new UserController();
+    let authCtrl = new AuthController();
+
+    router.post('/login', (req, res)=> authCtrl.login(req, res));
 
     router.get('/users', (req, res)=> ctrl.getAllUser(req, res));
     router.get('/user/:id', (req, res)=> ctrl.getUserById(req, res));
