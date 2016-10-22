@@ -26,6 +26,25 @@ class AuthController{
         });
     }
 
+    register(req, res){
+        let email = req.body.email || '';
+        let password = req.body.password || '';
+
+        if(!email || !password){
+            res.status(401).send({error: "invalid credentials"});
+            return;
+        }
+
+        this.user.add(req.body, (errMessage, user)=>{
+            if(errMessage && !user){
+                res.status(401).send({error: errMessage});
+                return;
+            }
+
+            res.json(this._generateToken(user));
+        });
+    }
+
     validateUser(email, password, callback){
         this.user.getByEmailAndPassword(email, password, (errMessage, user)=>{
             if(user) callback(null, user);

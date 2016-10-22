@@ -97,7 +97,11 @@ class User extends AbstractModel{
 
         this.user.create(user)
             .then((user)=>{
-                callback(null, user.get());
+                let result = {};
+                result[UserField.id.f] = user.get(UserField.id.f);
+                result[UserField.email.f] = user.get(UserField.email.f);
+
+                callback(null, result);
             })
             .catch((err)=>{
                 callback(err.message, null);
